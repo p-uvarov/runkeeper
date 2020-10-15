@@ -11,6 +11,7 @@
 		3F5CA0642538F96B00FF56B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5CA0632538F96B00FF56B2 /* ContentView.swift */; };
 		3F5CA0662538F96B00FF56B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5CA0652538F96B00FF56B2 /* Assets.xcassets */; };
 		3F5CA0692538F96B00FF56B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5CA0682538F96B00FF56B2 /* Preview Assets.xcassets */; };
+		3F5CA072253911B400FF56B2 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5CA071253911B400FF56B2 /* Bundle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		3F5CA0652538F96B00FF56B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F5CA0682538F96B00FF56B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3F5CA06A2538F96B00FF56B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F5CA071253911B400FF56B2 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 		3F5CA0602538F96B00FF56B2 /* Runkeeper */ = {
 			isa = PBXGroup;
 			children = (
+				3F5CA074253911D700FF56B2 /* Extensions */,
 				3F5CA0612538F96B00FF56B2 /* RunkeeperApp.swift */,
 				3F5CA0632538F96B00FF56B2 /* ContentView.swift */,
 				3F5CA0652538F96B00FF56B2 /* Assets.xcassets */,
@@ -67,6 +70,14 @@
 				3F5CA0682538F96B00FF56B2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3F5CA074253911D700FF56B2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3F5CA071253911B400FF56B2 /* Bundle.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F5CA0642538F96B00FF56B2 /* ContentView.swift in Sources */,
+				3F5CA072253911B400FF56B2 /* Bundle.swift in Sources */,
 				3F5CA0622538F96B00FF56B2 /* RunkeeperApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

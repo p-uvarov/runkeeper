@@ -1,4 +1,4 @@
-# runkeeper
+# Runkeeper
 
 App demonstrates navigation between views using the SwiftUI framework.
 Also, the app includes:

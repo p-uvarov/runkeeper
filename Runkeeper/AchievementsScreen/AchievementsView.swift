@@ -19,33 +19,42 @@ struct AchievementsView: View {
 	@ObservedObject var viewModel = AchievementsViewModel()
 	@State var isShowingActionSheet = false
 	@State var alertType: AlertType?
+	@State var displayingRace: RaceModel?
 	
     var body: some View {
-		ScrollView {
-			RacesView(races: viewModel.personalRecordsData, type: .personalRecords)
-			RacesView(races: viewModel.virtualRaceData, type: .virtualRaces)
-		}
-		.navigationBarTitle("Achievements", displayMode: .inline)
-		.navigationBarItems(trailing: optionsButton)
-		.actionSheet(isPresented: $isShowingActionSheet) {
-			ActionSheet(title: Text("Settings").font(.system(size: 14)), message: nil, buttons: [
-				.destructive(Text("Option 1")) { alertType = .firstOption },
-				.default(Text("Option 2")) { alertType = .secondOption },
-				.default(Text("Option 3")) { alertType = .thirdOption },
-				.cancel()
-			])
-		}
-		.alert(item: $alertType) { (alertType) -> Alert in
-			switch alertType {
-			case .firstOption:
-				return Alert(title: Text("Option 1 was tapped"))
-			case .secondOption:
-				return Alert(title: Text("Option 2 was tapped"))
-			case .thirdOption:
-				return Alert(title: Text("Option 3 was tapped"))
+		ZStack {
+			ScrollView {
+				RacesView(races: viewModel.personalRecordsData, type: .personalRecords, displayingRace: $displayingRace)
+				RacesView(races: viewModel.virtualRaceData, type: .virtualRaces, displayingRace: $displayingRace)
+			}
+			.navigationBarTitle("Achievements", displayMode: .inline)
+			.navigationBarItems(trailing: optionsButton)
+			.actionSheet(isPresented: $isShowingActionSheet) {
+				ActionSheet(title: Text("Settings").font(.system(size: 14)), message: nil, buttons: [
+					.destructive(Text("Option 1")) { alertType = .firstOption },
+					.default(Text("Option 2")) { alertType = .secondOption },
+					.default(Text("Option 3")) { alertType = .thirdOption },
+					.cancel()
+				])
+			}
+			.alert(item: $alertType) { (alertType) -> Alert in
+				switch alertType {
+				case .firstOption:
+					return Alert(title: Text("Option 1 was tapped"))
+				case .secondOption:
+					return Alert(title: Text("Option 2 was tapped"))
+				case .thirdOption:
+					return Alert(title: Text("Option 3 was tapped"))
+				}
+			}
+			
+			VStack {
+				if displayingRace != nil {
+					RaceDetailsView(displayingRace: $displayingRace)
+				}
 			}
 		}
-    }
+	}
 	
 	var optionsButton: some View {
 		Button {

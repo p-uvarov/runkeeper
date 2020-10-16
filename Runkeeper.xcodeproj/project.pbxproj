@@ -19,6 +19,7 @@
 		3F5CA0692538F96B00FF56B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5CA0682538F96B00FF56B2 /* Preview Assets.xcassets */; };
 		3F5CA072253911B400FF56B2 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5CA071253911B400FF56B2 /* Bundle.swift */; };
 		3F5CA076253912A900FF56B2 /* racesData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F5CA075253912A900FF56B2 /* racesData.json */; };
+		3F91EC342539B8DA00207108 /* RaceDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91EC332539B8DA00207108 /* RaceDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		3F5CA06A2538F96B00FF56B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F5CA071253911B400FF56B2 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		3F5CA075253912A900FF56B2 /* racesData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = racesData.json; sourceTree = "<group>"; };
+		3F91EC332539B8DA00207108 /* RaceDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				3F43FE12253992AC0085CA6B /* AchievementsViewModel.swift */,
 				3F43FE1A2539940E0085CA6B /* AchievementsView.swift */,
 				3F43FE1F2539A3700085CA6B /* RaceLogoImageView.swift */,
+				3F91EC332539B8DA00207108 /* RaceDetailsView.swift */,
 			);
 			path = AchievementsScreen;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				3F43FE17253993010085CA6B /* RaceModel.swift in Sources */,
 				3F5CA0642538F96B00FF56B2 /* ContentView.swift in Sources */,
 				3F43FE0C2539917C0085CA6B /* UIColor.swift in Sources */,
+				3F91EC342539B8DA00207108 /* RaceDetailsView.swift in Sources */,
 				3F43FE13253992AC0085CA6B /* AchievementsViewModel.swift in Sources */,
 				3F43FE202539A3700085CA6B /* RaceLogoImageView.swift in Sources */,
 				3F43FE10253991D40085CA6B /* RacesView.swift in Sources */,

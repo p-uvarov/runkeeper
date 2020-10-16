@@ -12,6 +12,7 @@
 		3F43FE13253992AC0085CA6B /* AchievementsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F43FE12253992AC0085CA6B /* AchievementsViewModel.swift */; };
 		3F43FE17253993010085CA6B /* RaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F43FE16253993010085CA6B /* RaceModel.swift */; };
 		3F43FE1B2539940E0085CA6B /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F43FE1A2539940E0085CA6B /* AchievementsView.swift */; };
+		3F43FE202539A3700085CA6B /* RaceLogoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F43FE1F2539A3700085CA6B /* RaceLogoImageView.swift */; };
 		3F5CA0622538F96B00FF56B2 /* RunkeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5CA0612538F96B00FF56B2 /* RunkeeperApp.swift */; };
 		3F5CA0642538F96B00FF56B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5CA0632538F96B00FF56B2 /* ContentView.swift */; };
 		3F5CA0662538F96B00FF56B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5CA0652538F96B00FF56B2 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		3F43FE12253992AC0085CA6B /* AchievementsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewModel.swift; sourceTree = "<group>"; };
 		3F43FE16253993010085CA6B /* RaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceModel.swift; sourceTree = "<group>"; };
 		3F43FE1A2539940E0085CA6B /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
+		3F43FE1F2539A3700085CA6B /* RaceLogoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceLogoImageView.swift; sourceTree = "<group>"; };
 		3F5CA05E2538F96B00FF56B2 /* Runkeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runkeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5CA0612538F96B00FF56B2 /* RunkeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunkeeperApp.swift; sourceTree = "<group>"; };
 		3F5CA0632538F96B00FF56B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 				3F43FE0F253991D40085CA6B /* RacesView.swift */,
 				3F43FE12253992AC0085CA6B /* AchievementsViewModel.swift */,
 				3F43FE1A2539940E0085CA6B /* AchievementsView.swift */,
+				3F43FE1F2539A3700085CA6B /* RaceLogoImageView.swift */,
 			);
 			path = AchievementsScreen;
 			sourceTree = "<group>";
@@ -64,6 +67,14 @@
 				3F43FE16253993010085CA6B /* RaceModel.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		3F43FE1D2539A0E00085CA6B /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3F5CA0632538F96B00FF56B2 /* ContentView.swift */,
+			);
+			path = MainScreen;
 			sourceTree = "<group>";
 		};
 		3F5CA0552538F96A00FF56B2 = {
@@ -86,10 +97,10 @@
 			isa = PBXGroup;
 			children = (
 				3F43FE15253992D10085CA6B /* Data */,
+				3F43FE1D2539A0E00085CA6B /* MainScreen */,
 				3F43FE0E2539919E0085CA6B /* AchievementsScreen */,
 				3F5CA074253911D700FF56B2 /* Extensions */,
 				3F5CA0612538F96B00FF56B2 /* RunkeeperApp.swift */,
-				3F5CA0632538F96B00FF56B2 /* ContentView.swift */,
 				3F5CA0652538F96B00FF56B2 /* Assets.xcassets */,
 				3F5CA06A2538F96B00FF56B2 /* Info.plist */,
 				3F5CA0672538F96B00FF56B2 /* Preview Content */,
@@ -189,6 +200,7 @@
 				3F5CA0642538F96B00FF56B2 /* ContentView.swift in Sources */,
 				3F43FE0C2539917C0085CA6B /* UIColor.swift in Sources */,
 				3F43FE13253992AC0085CA6B /* AchievementsViewModel.swift in Sources */,
+				3F43FE202539A3700085CA6B /* RaceLogoImageView.swift in Sources */,
 				3F43FE10253991D40085CA6B /* RacesView.swift in Sources */,
 				3F5CA072253911B400FF56B2 /* Bundle.swift in Sources */,
 				3F5CA0622538F96B00FF56B2 /* RunkeeperApp.swift in Sources */,

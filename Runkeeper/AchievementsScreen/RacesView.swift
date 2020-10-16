@@ -49,17 +49,11 @@ struct RacesView: View {
 						if let imageName = race.imageName,
 						   !imageName.isEmpty
 						{
-							Image(imageName)
-								.resizable()
-								.aspectRatio(contentMode: .fit)
-								.frame(width: 100, height: 100, alignment: .center)
-								.shadow(color: Color.gray,
-										radius: 7.0,
-										x: 0,
-										y: 5)
-								.padding(.bottom, 5)
-								.opacity(race.isActive ?? true ? 1 : 0.3)
+							RaceLogoImageView(name: imageName, isActive: race.isActive)
+						} else {
+							RaceLogoImageView(name: "raceLogoPlaceholder", isActive: race.isActive)
 						}
+						
 						VStack (spacing: 3) {
 							Text(race.title ?? "")
 								.font(.system(size: 13, weight: .medium, design: .default))

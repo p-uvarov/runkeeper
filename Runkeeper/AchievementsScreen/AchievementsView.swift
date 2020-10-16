@@ -8,73 +8,56 @@
 import SwiftUI
 
 struct AchievementsView: View {
-	let races: [RaceModel]
-	let type: RaceModel.RaceType
+	enum AlertType: String, Identifiable {
+		var id: String { rawValue }
+		
+		case firstOption
+		case secondOption
+		case thirdOption
+	}
 	
-	let columns = [
-		GridItem(.flexible()),
-		GridItem(.flexible())
-	]
+	@ObservedObject var viewModel = AchievementsViewModel()
+	@State var isShowingActionSheet = false
+	@State var alertType: AlertType?
 	
-	var body: some View {
-		VStack {
-			HStack {
-				VStack {
-					switch type {
-					case .personalRecords:
-						Text("Personal Records")
-					case .virtualRaces:
-						Text("Virtual Races")
-					}
-				}
-				.font(.system(size: 15, weight: .medium, design: .default))
-				
-				Spacer()
-				
-				if type == RaceModel.RaceType.personalRecords,
-				   let completedRaces = races.filter { $0.isCompleted == true }
-				{
-					Text("\(completedRaces.count) of \(races.count)")
-						.font(.system(size: 13, weight: .light, design: .default))
-						.foregroundColor(Color(UIColor.darkGray))
-				}
-			}
-			.padding(.horizontal, 20)
-			.padding(.vertical, 7)
-			.background(Color(UIColor.systemGray6))
-			
-			LazyVGrid(columns: columns, spacing: 20) {
-				ForEach(races, id: \.id) { race in
-					VStack {
-						if let imageName = race.imageName,
-						   !imageName.isEmpty
-						{
-							Image(imageName)
-								.resizable()
-								.aspectRatio(contentMode: .fit)
-								.frame(width: 100, height: 100, alignment: .center)
-								.shadow(color: Color.gray,
-										radius: 7.0,
-										x: 0,
-										y: 5)
-								.padding(.bottom, 5)
-								.opacity(race.isActive ?? true ? 1 : 0.3)
-						}
-						VStack (spacing: 3) {
-							Text(race.title ?? "")
-								.font(.system(size: 13, weight: .medium, design: .default))
-							Text(race.subtitle ?? "")
-								.font(.system(size: 13, weight: .light, design: .default))
-						}
-						.frame(width: 150)
-						.multilineTextAlignment(.center)
-						.opacity(race.isActive ?? true ? 1 : 0.7)
-					}
-					.padding(.vertical, 12)
-				}
-			}
-			.padding(.horizontal)
-			.padding(.vertical, 12)
+    var body: some View {
+		ScrollView {
+			RacesView(races: viewModel.personalRecordsData, type: .personalRecords)
+			RacesView(races: viewModel.virtualRaceData, type: .virtualRaces)
 		}
+		.navigationBarTitle("Achievements", displayMode: .inline)
+		.navigationBarItems(trailing: optionsButton)
+		.actionSheet(isPresented: $isShowingActionSheet) {
+			ActionSheet(title: Text("Settings").font(.system(size: 14)), message: nil, buttons: [
+				.destructive(Text("Option 1")) { alertType = .firstOption },
+				.default(Text("Option 2")) { alertType = .secondOption },
+				.default(Text("Option 3")) { alertType = .thirdOption },
+				.cancel()
+			])
+		}
+		.alert(item: $alertType) { (alertType) -> Alert in
+			switch alertType {
+			case .firstOption:
+				return Alert(title: Text("Option 1 was tapped"))
+			case .secondOption:
+				return Alert(title: Text("Option 2 was tapped"))
+			case .thirdOption:
+				return Alert(title: Text("Option 3 was tapped"))
+			}
+		}
+    }
+	
+	var optionsButton: some View {
+		Button {
+			isShowingActionSheet = true
+		} label: {
+			Image(systemName: "ellipsis")
+				.rotationEffect(.degrees(90))
+				.foregroundColor(.white)
+				.font(.system(size: 17, weight: .semibold, design: .default))
+				.padding(.leading, 15)
+				.padding(.vertical, 15)
+		}
+
 	}
 }

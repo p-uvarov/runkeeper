@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
-	@ObservedObject var viewModel = AchievementsViewModel()
-		
+	@State private var isActive: Bool  = false
+	
 	var body: some View {
 		NavigationView {
-			ScrollView {
-				AchievementsView(races: viewModel.personalRecordsData, type: .personalRecords)
-				AchievementsView(races: viewModel.virtualRaceData, type: .virtualRaces)
+			NavigationLink(destination: AchievementsView(), isActive: $isActive) {
+				Text("Show Detail View")
+					.foregroundColor(.blue)
 			}
-			.navigationBarTitle("Achievements", displayMode: .inline)
+			.navigationBarTitle(isActive ? "" : "Main" , displayMode: .inline)
 		}
+		.accentColor(.white)
 	}
 }
 

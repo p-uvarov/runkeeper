@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3F43FE0C2539917C0085CA6B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F43FE0B2539917C0085CA6B /* UIColor.swift */; };
-		3F43FE10253991D40085CA6B /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F43FE0F253991D40085CA6B /* AchievementsView.swift */; };
+		3F43FE10253991D40085CA6B /* RacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F43FE0F253991D40085CA6B /* RacesView.swift */; };
 		3F43FE13253992AC0085CA6B /* AchievementsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F43FE12253992AC0085CA6B /* AchievementsViewModel.swift */; };
 		3F43FE17253993010085CA6B /* RaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F43FE16253993010085CA6B /* RaceModel.swift */; };
+		3F43FE1B2539940E0085CA6B /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F43FE1A2539940E0085CA6B /* AchievementsView.swift */; };
 		3F5CA0622538F96B00FF56B2 /* RunkeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5CA0612538F96B00FF56B2 /* RunkeeperApp.swift */; };
 		3F5CA0642538F96B00FF56B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5CA0632538F96B00FF56B2 /* ContentView.swift */; };
 		3F5CA0662538F96B00FF56B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5CA0652538F96B00FF56B2 /* Assets.xcassets */; };
@@ -21,9 +22,10 @@
 
 /* Begin PBXFileReference section */
 		3F43FE0B2539917C0085CA6B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		3F43FE0F253991D40085CA6B /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
+		3F43FE0F253991D40085CA6B /* RacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesView.swift; sourceTree = "<group>"; };
 		3F43FE12253992AC0085CA6B /* AchievementsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewModel.swift; sourceTree = "<group>"; };
 		3F43FE16253993010085CA6B /* RaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceModel.swift; sourceTree = "<group>"; };
+		3F43FE1A2539940E0085CA6B /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
 		3F5CA05E2538F96B00FF56B2 /* Runkeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runkeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5CA0612538F96B00FF56B2 /* RunkeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunkeeperApp.swift; sourceTree = "<group>"; };
 		3F5CA0632538F96B00FF56B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,8 +50,9 @@
 		3F43FE0E2539919E0085CA6B /* AchievementsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				3F43FE0F253991D40085CA6B /* AchievementsView.swift */,
+				3F43FE0F253991D40085CA6B /* RacesView.swift */,
 				3F43FE12253992AC0085CA6B /* AchievementsViewModel.swift */,
+				3F43FE1A2539940E0085CA6B /* AchievementsView.swift */,
 			);
 			path = AchievementsScreen;
 			sourceTree = "<group>";
@@ -181,11 +184,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F43FE1B2539940E0085CA6B /* AchievementsView.swift in Sources */,
 				3F43FE17253993010085CA6B /* RaceModel.swift in Sources */,
 				3F5CA0642538F96B00FF56B2 /* ContentView.swift in Sources */,
 				3F43FE0C2539917C0085CA6B /* UIColor.swift in Sources */,
 				3F43FE13253992AC0085CA6B /* AchievementsViewModel.swift in Sources */,
-				3F43FE10253991D40085CA6B /* AchievementsView.swift in Sources */,
+				3F43FE10253991D40085CA6B /* RacesView.swift in Sources */,
 				3F5CA072253911B400FF56B2 /* Bundle.swift in Sources */,
 				3F5CA0622538F96B00FF56B2 /* RunkeeperApp.swift in Sources */,
 			);

@@ -13,8 +13,15 @@ struct ContentView: View {
 	var body: some View {
 		NavigationView {
 			NavigationLink(destination: AchievementsView(), isActive: $isActive) {
-				Text("Show Detail View")
-					.foregroundColor(.blue)
+				ZStack {
+					Capsule()
+						.fill(Color(.rkLightGreenishBlue))
+						.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 50)
+						.padding(.horizontal, 15)
+					Text("Achievements")
+						.font(.system(size: 22, weight: .bold, design: .default))
+						.foregroundColor(.white)
+				}
 			}
 			.navigationBarTitle(isActive ? "" : "Main" , displayMode: .inline)
 		}

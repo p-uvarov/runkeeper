@@ -3,7 +3,7 @@
 		"id": 0,
 		"title": "Longest Run",
 		"subtitle": "00:00",
-		"imageName": "virtual5KRace",
+		"imageName": "longestRun",
 		"isActive": true,
 		"isCompleted": true,
 		"type": 1
@@ -12,7 +12,7 @@
 		"id": 1,
 		"title": "Highest Elevation",
 		"subtitle": "2095 ft",
-		"imageName": "virtual5KRace",
+		"imageName": "highestElevation",
 		"isActive": true,
 		"isCompleted": true,
 		"type": 1
@@ -21,25 +21,25 @@
 		"id": 2,
 		"title": "Fastest 5K",
 		"subtitle": "00:00",
-		"imageName": "virtual5KRace",
+		"imageName": "fastest5K",
 		"isActive": true,
-		"isCompleted": true,
+		"isCompleted": false,
 		"type": 1
 	},
 	{
 		"id": 3,
 		"title": "10K",
 		"subtitle": "00:00:00",
-		"imageName": "virtual5KRace",
+		"imageName": "10K",
 		"isActive": true,
-		"isCompleted": true,
+		"isCompleted": false,
 		"type": 1
 	},
 	{
 		"id": 4,
 		"title": "Half Marathon",
 		"subtitle": "00:00",
-		"imageName": "",
+		"imageName": "halfMarathon",
 		"isActive": true,
 		"isCompleted": true,
 		"type": 1
@@ -48,7 +48,7 @@
 		"id": 5,
 		"title": "Marathon",
 		"subtitle": "Not Yet",
-		"imageName": "",
+		"imageName": "marathon",
 		"isActive": false,
 		"isCompleted": true,
 		"type": 1
@@ -57,7 +57,7 @@
 		"id": 6,
 		"title": "Virtual Half Marathon Race",
 		"subtitle": "00:00",
-		"imageName": "",
+		"imageName": "virtualHalfMarathonRace",
 		"isActive": true,
 		"type": 2
 	},
@@ -65,7 +65,7 @@
 		"id": 7,
 		"title": "Tokyo-Hakone Ekiden 2020",
 		"subtitle": "00:00:00",
-		"imageName": "",
+		"imageName": "tokyo-HakoneEkiden2020",
 		"isActive": true,
 		"type": 2
 	},
@@ -73,7 +73,7 @@
 		"id": 8,
 		"title": "Virtual 10K Race",
 		"subtitle": "00:00:00",
-		"imageName": "",
+		"imageName": "virtual10KRace",
 		"isActive": true,
 		"type": 2
 	},
@@ -81,7 +81,7 @@
 		"id": 9,
 		"title": "Hakone Ekiden",
 		"subtitle": "00:00:00",
-		"imageName": "",
+		"imageName": "hakoneEkiden",
 		"isActive": true,
 		"type": 2
 	},
@@ -89,7 +89,7 @@
 		"id": 10,
 		"title": "Mizuno Singapore Ekiden 2015",
 		"subtitle": "00:00:00",
-		"imageName": "",
+		"imageName": "mizunoSingaporeEkiden2015",
 		"isActive": true,
 		"type": 2
 	},

@@ -52,29 +52,53 @@ class ViewModel: ObservableObject {
 
 struct ContentView: View {
 	@ObservedObject var viewModel = ViewModel()
-	let data = (1...1000).map { "Item \($0)" }
 
+	var body: some View {
+		ScrollView {
+			RacesView(races: viewModel.personalRecordsData, type: .personalRecords)
+			RacesView(races: viewModel.virtualRaceData, type: .virtualRaces)
+		}
+	}
+}
+
+struct RacesView: View {
+	let races: [RaceModel]
+	let type: RaceModel.RaceType
+	
 	let columns = [
 		GridItem(.flexible()),
 		GridItem(.flexible())
 	]
-
+	
 	var body: some View {
-		ScrollView {
+		VStack {
 			HStack {
-				Text("Personal Records")
-					.font(.system(size: 15, weight: .medium, design: .default))
+				VStack {
+					switch type {
+					case .personalRecords:
+						Text("Personal Records")
+					case .virtualRaces:
+						Text("Virtual Races")
+					}
+				}
+				.font(.system(size: 15, weight: .medium, design: .default))
+				
 				Spacer()
-				Text("4 of 6")
-					.font(.system(size: 13, weight: .light, design: .default))
-					.foregroundColor(Color(UIColor.darkGray))
+				
+				if type == RaceModel.RaceType.personalRecords,
+				   let completedRaces = races.filter { $0.isCompleted == true }
+				{
+					Text("\(completedRaces.count) of \(races.count)")
+						.font(.system(size: 13, weight: .light, design: .default))
+						.foregroundColor(Color(UIColor.darkGray))
+				}
 			}
 			.padding(.horizontal, 20)
 			.padding(.vertical, 7)
 			.background(Color(UIColor.systemGray6))
 			
 			LazyVGrid(columns: columns, spacing: 20) {
-				ForEach(viewModel.personalRecordsData, id: \.id) { race in
+				ForEach(races, id: \.id) { race in
 					VStack {
 						if let imageName = race.imageName,
 						   !imageName.isEmpty
@@ -88,7 +112,7 @@ struct ContentView: View {
 										x: 0,
 										y: 5)
 								.padding(.bottom, 5)
-							
+								.opacity(race.isActive ?? true ? 1 : 0.3)
 						}
 						VStack (spacing: 3) {
 							Text(race.title ?? "")
@@ -96,6 +120,9 @@ struct ContentView: View {
 							Text(race.subtitle ?? "")
 								.font(.system(size: 13, weight: .light, design: .default))
 						}
+						.frame(width: 150)
+						.multilineTextAlignment(.center)
+						.opacity(race.isActive ?? true ? 1 : 0.7)
 					}
 					.padding(.vertical, 12)
 				}

@@ -39,12 +39,12 @@ struct RacesView: View {
 					{
 						Text("\(completedRaces.count) of \(races.count)")
 							.font(.system(size: 13, weight: .light, design: .default))
-							.foregroundColor(Color(UIColor.darkGray))
+							.foregroundColor(Color(.rkDarkGray))
 					}
 				}
 				.padding(.horizontal, 20)
 				.padding(.vertical, 7)
-				.background(Color(UIColor.systemGray6))
+				.background(Color(.rkSystemGray6))
 				
 				LazyVGrid(columns: columns, spacing: 20) {
 					ForEach(races, id: \.id) { race in
@@ -68,7 +68,7 @@ struct RacesView: View {
 									Text(race.subtitle ?? "")
 										.font(.system(size: 13, weight: .light, design: .default))
 								}
-								.foregroundColor(.black)
+								.foregroundColor(Color(.rkBlack))
 								.frame(width: 150)
 								.multilineTextAlignment(.center)
 								.opacity(race.isActive ?? true ? 1 : 0.7)
@@ -88,17 +88,21 @@ struct RacesView: View {
 extension AnyTransition {
 
 	static var moveAndFade: AnyTransition {
-
 		let insertion = AnyTransition.move(edge: .trailing)
-
 			.combined(with: .opacity)
 
 		let removal = AnyTransition.scale
-
 			.combined(with: .opacity)
 
 		return .asymmetric(insertion: insertion, removal: removal)
+	}
+	
+	static var move: AnyTransition {
+		let insertion = AnyTransition.move(edge: .top)
 
+		let removal = AnyTransition.move(edge: .bottom)
+
+		return .asymmetric(insertion: insertion, removal: removal)
 	}
 
 }

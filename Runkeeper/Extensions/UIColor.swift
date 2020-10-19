@@ -32,6 +32,30 @@ extension UIColor {
 	}
 	
 	static var rkLightGreenishBlue: UIColor {
-		UIColor(hex: "#63c6d4")
+		return UITraitCollection.current.userInterfaceStyle == .dark
+			? .gray
+			: UIColor(hex: "#63c6d4")
+	}
+	
+	static var rkDarkGray: UIColor {
+		return UITraitCollection.current.userInterfaceStyle == .dark
+			? UIColor(hex: "#fafafa")
+			: .darkGray
+	}
+	
+	static var rkSystemGray6: UIColor {
+		return UITraitCollection.current.userInterfaceStyle == .dark
+			? .systemGray
+			: .systemGray6
+	}
+	
+	static var rkBlack: UIColor {
+		return UITraitCollection.current.userInterfaceStyle == .dark
+			? .white
+			: .black
+	}
+	
+	static var rkShadowGray: UIColor {
+		UIColor.gray.withAlphaComponent(UITraitCollection.current.userInterfaceStyle == .dark ? 0 : 1)
 	}
 }

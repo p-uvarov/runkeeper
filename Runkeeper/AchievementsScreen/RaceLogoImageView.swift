@@ -16,7 +16,7 @@ struct RaceLogoImageView: View {
 			.resizable()
 			.aspectRatio(contentMode: .fit)
 			.frame(width: 100, height: 100, alignment: .center)
-			.shadow(color: Color.gray,
+			.shadow(color: Color(.rkShadowGray),
 					radius: 7.0,
 					x: 0,
 					y: 5)

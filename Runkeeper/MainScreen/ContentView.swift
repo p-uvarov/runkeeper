@@ -7,25 +7,26 @@
 
 import SwiftUI
 
+class UserSettings: ObservableObject {
+	@Published var isActive: Bool  = false
+}
+
 struct ContentView: View {
-	@State private var isActive: Bool  = false
+	@Environment(\.colorScheme) var colorScheme
+	var settings = UserSettings()
 	
 	var body: some View {
-		NavigationView {
-			NavigationLink(destination: AchievementsView(), isActive: $isActive) {
-				ZStack {
-					Capsule()
-						.fill(Color(.rkLightGreenishBlue))
-						.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 50)
-						.padding(.horizontal, 15)
-					Text("Achievements")
-						.font(.system(size: 22, weight: .bold, design: .default))
-						.foregroundColor(.white)
-				}
+		VStack {
+			if colorScheme == .light {
+				HomeView()
+					.transition(.move)
+			} else {
+				HomeView()
+					.transition(.move)
 			}
-			.navigationBarTitle(isActive ? "" : "Main" , displayMode: .inline)
 		}
-		.accentColor(.white)
+		.animation(.default ,value: colorScheme)
+		.environmentObject(settings)
 	}
 }
 
